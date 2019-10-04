@@ -104,11 +104,30 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Header/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
+  tabs: {
+    backgroundColor: '#8AD8F2',
+    height: 3
+  }
+}));
+
 const Header = () => {
+  const classes = useStyles();
+  const [value, setValue] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return __jsx("div", {
     style: {
       display: 'flex',
@@ -117,7 +136,7 @@ const Header = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx("img", {
@@ -125,44 +144,60 @@ const Header = () => {
     alt: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 24
     },
     __self: undefined
-  }), __jsx("div", {
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
+    style: {
+      backgroundColor: '#111'
+    },
+    position: "static",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 25
     },
     __self: undefined
-  }, __jsx("a", {
-    href: "/",
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tabs"], {
+    value: value,
+    onChange: handleChange,
+    centered: true,
+    classes: {
+      indicator: classes.tabs
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 26
     },
     __self: undefined
-  }, "Orders"), __jsx("a", {
-    href: "/",
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
+    label: "Orders",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 32
     },
     __self: undefined
-  }, "Surfboards"), __jsx("a", {
-    href: "/",
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
+    label: "Gallery",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 33
     },
     __self: undefined
-  }, "About"), __jsx("a", {
-    href: "/",
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
+    label: "Sustainability",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 34
     },
     __self: undefined
-  }, "Contact")));
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
+    label: "Contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -240,6 +275,28 @@ const Index = () => {
 
 module.exports = __webpack_require__(/*! /Users/kumi5605/Desktop/projects/pearl-surf/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "@material-ui/core":
+/*!************************************!*\
+  !*** external "@material-ui/core" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core");
+
+/***/ }),
+
+/***/ "@material-ui/core/styles":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/styles" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
