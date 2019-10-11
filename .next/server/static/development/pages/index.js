@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -135,20 +135,18 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["
   }
 }));
 
-const Header = () => {
+const Header = props => {
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
   const classes = useStyles();
   const {
     0: value,
     1: setValue
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.position);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setValue(props.position);
+  }, [props.position]);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleRouteNavigation = e => {
-    e.preventDefault();
+  const handleChange = e => {
     const route = Object(_utils_convertToRoute__WEBPACK_IMPORTED_MODULE_5__["convertToRoute"])(e.target);
     router.push(route);
   };
@@ -161,7 +159,7 @@ const Header = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 35
     },
     __self: undefined
   }, __jsx("img", {
@@ -169,17 +167,18 @@ const Header = () => {
     alt: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 38
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
     style: {
-      backgroundColor: '#111'
+      backgroundColor: '#111',
+      marginTop: 10
     },
-    position: "static",
+    position: "sticky",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 39
     },
     __self: undefined
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tabs"], {
@@ -189,38 +188,44 @@ const Header = () => {
     classes: {
       indicator: classes.tabs
     },
-    onClick: handleRouteNavigation,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: undefined
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Orders",
+    label: "Home",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Gallery",
+    label: "Orders",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Sustainability",
+    label: "Gallery",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Contact",
+    label: "Sustainability",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52
+    },
+    __self: undefined
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
+    label: "Contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
     },
     __self: undefined
   }))));
@@ -263,7 +268,7 @@ const Home = () => {
     href: "/static/styles.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 9
     },
     __self: undefined
   }), __jsx("link", {
@@ -272,19 +277,20 @@ const Home = () => {
     href: "/static/nprogress.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: undefined
   }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: undefined
   }, "Peart St Surfboards")), __jsx(_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    position: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 13
     },
     __self: undefined
   }));
@@ -337,12 +343,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertToRoute", function() { return convertToRoute; });
 const convertToRoute = target => {
   let newTarget = target.innerText.toLowerCase();
+
+  if (newTarget.includes('home')) {
+    newTarget = '';
+  }
+
   return `/${newTarget}`;
 };
 
 /***/ }),
 
-/***/ 4:
+/***/ 8:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

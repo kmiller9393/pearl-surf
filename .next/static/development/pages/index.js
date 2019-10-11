@@ -48,20 +48,19 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
   };
 });
 
-var Header = function Header() {
+var Header = function Header(props) {
   var router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
   var classes = useStyles();
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.position),
       value = _useState[0],
       setValue = _useState[1];
 
-  var handleChange = function handleChange(event, newValue) {
-    setValue(newValue);
-  };
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setValue(props.position);
+  }, [props.position]);
 
-  var handleRouteNavigation = function handleRouteNavigation(e) {
-    e.preventDefault();
+  var handleChange = function handleChange(e) {
     var route = Object(_utils_convertToRoute__WEBPACK_IMPORTED_MODULE_5__["convertToRoute"])(e.target);
     router.push(route);
   };
@@ -74,7 +73,7 @@ var Header = function Header() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 35
     },
     __self: this
   }, __jsx("img", {
@@ -82,17 +81,18 @@ var Header = function Header() {
     alt: "logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 38
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
     style: {
-      backgroundColor: '#111'
+      backgroundColor: '#111',
+      marginTop: 10
     },
-    position: "static",
+    position: "sticky",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 39
     },
     __self: this
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tabs"], {
@@ -102,38 +102,44 @@ var Header = function Header() {
     classes: {
       indicator: classes.tabs
     },
-    onClick: handleRouteNavigation,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: this
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Orders",
+    label: "Home",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Gallery",
+    label: "Orders",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Sustainability",
+    label: "Gallery",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Contact",
+    label: "Sustainability",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52
+    },
+    __self: this
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
+    label: "Contact",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
     },
     __self: this
   }))));
@@ -176,7 +182,7 @@ var Home = function Home() {
     href: "/static/styles.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 9
     },
     __self: this
   }), __jsx("link", {
@@ -185,19 +191,20 @@ var Home = function Home() {
     href: "/static/nprogress.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 10
     },
     __self: this
   }), __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 11
     },
     __self: this
   }, "Peart St Surfboards")), __jsx(_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    position: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 13
     },
     __self: this
   }));
@@ -56345,12 +56352,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "convertToRoute", function() { return convertToRoute; });
 var convertToRoute = function convertToRoute(target) {
   var newTarget = target.innerText.toLowerCase();
+
+  if (newTarget.includes('home')) {
+    newTarget = '';
+  }
+
   return "/".concat(newTarget);
 };
 
 /***/ }),
 
-/***/ 1:
+/***/ 5:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fkumi5605%2FDesktop%2Fprojects%2Fpearl-surf%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -56373,5 +56385,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
