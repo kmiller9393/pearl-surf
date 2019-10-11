@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tab, Tabs, AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Router, { useRouter } from 'next/router';
@@ -16,18 +16,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Header = () => {
+const Header = props => {
   const router = useRouter();
   const classes = useStyles();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(props.position);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  useEffect(() => {
+    setValue(props.position);
+  }, [props.position]);
 
-  const handleRouteNavigation = e => {
-    e.preventDefault();
-
+  const handleChange = e => {
     const route = convertToRoute(e.target);
 
     router.push(route);
@@ -38,14 +36,17 @@ const Header = () => {
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
     >
       <img src="../../static/pearl-st-logo.png" alt="logo" />
-      <AppBar style={{ backgroundColor: '#111' }} position="static">
+      <AppBar
+        style={{ backgroundColor: '#111', marginTop: 10 }}
+        position="sticky"
+      >
         <Tabs
           value={value}
           onChange={handleChange}
           centered
           classes={{ indicator: classes.tabs }}
-          onClick={handleRouteNavigation}
         >
+          <Tab label="Home" />
           <Tab label="Orders" />
           <Tab label="Gallery" />
           <Tab label="Sustainability" />
