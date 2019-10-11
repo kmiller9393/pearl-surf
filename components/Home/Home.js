@@ -10,7 +10,7 @@ const Home = () => {
         <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
         <title>Peart St Surfboards</title>
       </Head>
-      <Header />
+      <Header position={0} />
     </>
   );
 };
