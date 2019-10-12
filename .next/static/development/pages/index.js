@@ -18,8 +18,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogress.js");
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _utils_convertToRoute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/convertToRoute */ "./utils/convertToRoute.js");
+/* harmony import */ var _styles_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.js */ "./components/Header/styles.js");
 var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Header/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -39,13 +41,11 @@ next_router__WEBPACK_IMPORTED_MODULE_3___default.a.onRouteChangeError = function
   return nprogress__WEBPACK_IMPORTED_MODULE_4___default.a.done();
 };
 
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(function (theme) {
-  return {
-    tabs: {
-      backgroundColor: '#54d1db',
-      height: 3
-    }
-  };
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
+  tabs: {
+    backgroundColor: '#54d1db',
+    height: 3
+  }
 });
 
 var Header = function Header(props) {
@@ -65,6 +65,10 @@ var Header = function Header(props) {
     router.push(route);
   };
 
+  var sendHome = function sendHome() {
+    router.push('/');
+  };
+
   return __jsx("div", {
     style: {
       display: 'flex',
@@ -73,15 +77,17 @@ var Header = function Header(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 40
     },
     __self: this
-  }, __jsx("img", {
+  }, _styles_js__WEBPACK_IMPORTED_MODULE_6__["default"], __jsx("img", {
     src: "../../static/pearl-st-logo.png",
     alt: "logo",
+    onClick: sendHome,
+    className: "header-logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 44
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
@@ -92,7 +98,7 @@ var Header = function Header(props) {
     position: "sticky",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 50
     },
     __self: this
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tabs"], {
@@ -104,48 +110,76 @@ var Header = function Header(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 54
     },
     __self: this
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
     label: "Home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 60
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
     label: "Orders",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 61
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
     label: "Gallery",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 62
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
     label: "Sustainability",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 63
     },
     __self: this
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
     label: "Contact",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 64
     },
     __self: this
   }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
+
+/***/ }),
+
+/***/ "./components/Header/styles.js":
+/*!*************************************!*\
+  !*** ./components/Header/styles.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Header/styles.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var styles = __jsx("style", {
+  jsx: "true",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 2
+  },
+  __self: undefined
+}, "\n    .header-logo:hover {\n      cursor: pointer;\n    }\n  ");
+
+/* harmony default export */ __webpack_exports__["default"] = (styles);
 
 /***/ }),
 
@@ -56362,7 +56396,7 @@ var convertToRoute = function convertToRoute(target) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 0:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fkumi5605%2FDesktop%2Fprojects%2Fpearl-surf%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************************/
@@ -56385,5 +56419,5 @@ module.exports = dll_01f9a3fa864a7b7414d8;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
