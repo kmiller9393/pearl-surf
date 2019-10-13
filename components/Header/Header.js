@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import { convertToRoute } from '../../utils/convertToRoute';
-import styles from './styles.js';
+import NewHead from '../NewHead/NewHead';
+import styles from './styles';
 
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
@@ -37,34 +38,38 @@ const Header = props => {
   };
 
   return (
-    <div
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-    >
-      {styles}
-      <img
-        src="../../static/pearl-st-logo.png"
-        alt="logo"
-        onClick={sendHome}
-        className="header-logo"
-      />
-      <AppBar
-        style={{ backgroundColor: '#111', marginTop: 10 }}
-        position="sticky"
+    <>
+      <NewHead />
+      <section
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
       >
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          centered
-          classes={{ indicator: classes.tabs }}
-        >
-          <Tab label="Home" />
-          <Tab label="Orders" />
-          <Tab label="Gallery" />
-          <Tab label="Sustainability" />
-          <Tab label="Contact" />
-        </Tabs>
-      </AppBar>
-    </div>
+        {styles}
+        <img
+          src="../../static/pearl-st-logo.png"
+          alt="logo"
+          onClick={sendHome}
+          className="header-logo"
+        />
+        <AppBar style={{ backgroundColor: '#111', marginTop: 118 }} fixed>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            centered
+            classes={{ indicator: classes.tabs }}
+          >
+            <Tab label="Home" disableRipple />
+            <Tab label="Orders" disableRipple />
+            <Tab label="Gallery" disableRipple />
+            <Tab label="Sustainability" disableRipple />
+            <Tab label="Contact" disableRipple />
+          </Tabs>
+        </AppBar>
+      </section>
+    </>
   );
 };
 
