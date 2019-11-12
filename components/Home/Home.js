@@ -1,16 +1,25 @@
-import Head from 'next/head';
+import Head from '../NewHead/NewHead';
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
+const useStyles = makeStyles({
+  container: {
+    display: 'flex'
+  }
+});
 
 const Home = () => {
+  const classes = useStyles();
+
   return (
     <>
-      <Head>
-        <link rel="stylesheet" type="text/css" href="/static/styles.css" />
-        <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
-        <title>Peart St Surfboards</title>
-      </Head>
-      <Header position={0} />
+      <Head />
+      <main>
+        <Header position={0} />
+        <Footer />
+      </main>
     </>
   );
 };
