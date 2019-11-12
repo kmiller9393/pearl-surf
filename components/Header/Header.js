@@ -5,7 +5,6 @@ import Router, { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import { convertToRoute } from '../../utils/convertToRoute';
 import NewHead from '../NewHead/NewHead';
-import styles from './styles';
 
 Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
@@ -15,6 +14,11 @@ const useStyles = makeStyles({
   tabs: {
     backgroundColor: '#54d1db',
     height: 3
+  },
+  logo: {
+    '&:hover': {
+      cursor: 'pointer'
+    }
   }
 });
 
@@ -47,14 +51,16 @@ const Header = props => {
           alignItems: 'center'
         }}
       >
-        {styles}
         <img
           src="../../static/pearl-st-logo.png"
           alt="logo"
           onClick={sendHome}
-          className="header-logo"
+          className={classes.logo}
         />
-        <AppBar style={{ backgroundColor: '#111', marginTop: 118 }} fixed>
+        <AppBar
+          style={{ backgroundColor: '#111', marginTop: 118 }}
+          fixed="true"
+        >
           <Tabs
             value={value}
             onChange={handleChange}
