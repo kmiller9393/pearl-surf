@@ -18,6 +18,7 @@ const Home = () => {
       <Head />
       <main>
         <Header position={0} />
+        <div style={{ height: 587 }} />
         <Footer />
       </main>
     </>
