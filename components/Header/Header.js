@@ -44,7 +44,7 @@ const Header = props => {
   return (
     <>
       <NewHead />
-      <section
+      <article
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -58,8 +58,11 @@ const Header = props => {
           className={classes.logo}
         />
         <AppBar
-          style={{ backgroundColor: '#111', marginTop: 118 }}
-          fixed="true"
+          style={{
+            backgroundColor: '#111',
+            position: 'static',
+            marginTop: 5
+          }}
         >
           <Tabs
             value={value}
@@ -74,7 +77,7 @@ const Header = props => {
             <Tab label="Contact" disableRipple />
           </Tabs>
         </AppBar>
-      </section>
+      </article>
     </>
   );
 };
