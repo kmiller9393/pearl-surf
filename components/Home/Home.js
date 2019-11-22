@@ -3,6 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Intro from '../Intro/Intro';
 
 const useStyles = makeStyles({
   container: {
@@ -18,7 +19,7 @@ const Home = () => {
       <Head />
       <main>
         <Header position={0} />
-        <div style={{ height: 587 }} />
+        <Intro />
         <Footer />
       </main>
     </>
