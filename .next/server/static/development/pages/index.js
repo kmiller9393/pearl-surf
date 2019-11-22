@@ -115,33 +115,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
- // const useStyles = makeStyles({
-//   root: {
-//     // backgroundColor: '#111',
-//     // height: 3
-//   }
-// });
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
+  tabs: {
+    backgroundColor: '#111',
+    height: 3
+  }
+});
 
 const Footer = () => {
-  //   const classes = useStyles();
+  const classes = useStyles();
   const [value, setValue] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0);
   return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
-    value: value,
-    onChange: (event, newValue) => {
-      setValue(newValue);
-    } //   className={classes.root}
-    //   position="fixed"
-    ,
+    position: "static",
     style: {
-      backgroundColor: '#111',
-      height: 3,
-      position: 'fixed',
-      top: 'unset',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      width: '100vw'
+      backgroundColor: '#111'
     },
     __source: {
       fileName: _jsxFileName,
@@ -149,34 +137,22 @@ const Footer = () => {
     },
     __self: undefined
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tabs"], {
-    centered: "true",
-    style: {
-      height: '100%'
+    value: value,
+    centered: true,
+    classes: {
+      indicator: classes.tabs
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 19
     },
     __self: undefined
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Recents",
+    label: "Social Media",
+    disableRipple: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
-  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Favorites",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
-    label: "Nearby",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 20
     },
     __self: undefined
   })));
@@ -207,10 +183,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _utils_convertToRoute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/convertToRoute */ "./utils/convertToRoute.js");
 /* harmony import */ var _NewHead_NewHead__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../NewHead/NewHead */ "./components/NewHead/NewHead.js");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles */ "./components/Header/styles.js");
 var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Header/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -229,6 +203,11 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["
   tabs: {
     backgroundColor: '#54d1db',
     height: 3
+  },
+  logo: {
+    '&:hover': {
+      cursor: 'pointer'
+    }
   }
 });
 
@@ -255,10 +234,10 @@ const Header = props => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_NewHead_NewHead__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 46
     },
     __self: undefined
-  }), __jsx("section", {
+  }), __jsx("article", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -266,28 +245,28 @@ const Header = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 47
     },
     __self: undefined
-  }, _styles__WEBPACK_IMPORTED_MODULE_7__["default"], __jsx("img", {
+  }, __jsx("img", {
     src: "../../static/pearl-st-logo.png",
     alt: "logo",
     onClick: sendHome,
-    className: "header-logo",
+    className: classes.logo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 54
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["AppBar"], {
     style: {
       backgroundColor: '#111',
-      marginTop: 118
+      position: 'static',
+      marginTop: 5
     },
-    fixed: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tabs"], {
@@ -299,7 +278,7 @@ const Header = props => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 67
     },
     __self: undefined
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
@@ -307,7 +286,7 @@ const Header = props => {
     disableRipple: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 73
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
@@ -315,7 +294,7 @@ const Header = props => {
     disableRipple: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 74
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
@@ -323,7 +302,7 @@ const Header = props => {
     disableRipple: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 75
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
@@ -331,7 +310,7 @@ const Header = props => {
     disableRipple: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 76
     },
     __self: undefined
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Tab"], {
@@ -339,45 +318,13 @@ const Header = props => {
     disableRipple: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 77
     },
     __self: undefined
   })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
-
-/***/ }),
-
-/***/ "./components/Header/styles.js":
-/*!*************************************!*\
-  !*** ./components/Header/styles.js ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Header/styles.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-const styles = __jsx("style", {
-  jsx: "true",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 2
-  },
-  __self: undefined
-}, `
-    .header-logo:hover {
-      cursor: pointer;
-    }
-  `);
-
-/* harmony default export */ __webpack_exports__["default"] = (styles);
 
 /***/ }),
 
@@ -393,9 +340,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NewHead_NewHead__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../NewHead/NewHead */ "./components/NewHead/NewHead.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Header/Header */ "./components/Header/Header.js");
-/* harmony import */ var _Footer_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Footer/Footer */ "./components/Footer/Footer.js");
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles */ "./components/Home/styles.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Header/Header */ "./components/Header/Header.js");
+/* harmony import */ var _Footer_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Footer/Footer */ "./components/Footer/Footer.js");
+/* harmony import */ var _Intro_Intro__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Intro/Intro */ "./components/Intro/Intro.js");
 var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Home/Home.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -404,31 +353,43 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
+  container: {
+    display: 'flex'
+  }
+});
+
 const Home = () => {
+  const classes = useStyles();
   return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(_NewHead_NewHead__WEBPACK_IMPORTED_MODULE_0__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 19
     },
     __self: undefined
   }), __jsx("main", {
-    className: "main-container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 20
     },
     __self: undefined
-  }, __jsx(_Header_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_Header_Header__WEBPACK_IMPORTED_MODULE_3__["default"], {
     position: 0,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 21
     },
     __self: undefined
-  }), __jsx(_Footer_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_Intro_Intro__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 22
+    },
+    __self: undefined
+  }), __jsx(_Footer_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
     },
     __self: undefined
   })));
@@ -438,9 +399,9 @@ const Home = () => {
 
 /***/ }),
 
-/***/ "./components/Home/styles.js":
+/***/ "./components/Intro/Intro.js":
 /*!***********************************!*\
-  !*** ./components/Home/styles.js ***!
+  !*** ./components/Intro/Intro.js ***!
   \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -449,24 +410,61 @@ const Home = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Home/styles.js";
-
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/kumi5605/Desktop/projects/pearl-surf/components/Intro/Intro.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const styles = __jsx("style", {
-  jsx: "true",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 2
-  },
-  __self: undefined
-}, `
-    .main-container {
-      display: flex;
-    }
-  `);
 
-/* harmony default export */ __webpack_exports__["default"] = (styles);
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
+  introContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '30px 0'
+  },
+  image: {
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+    height: 467,
+    marginRight: 30,
+    width: 350
+  },
+  introContent: {
+    alignItems: 'center',
+    display: 'flex',
+    marginLeft: 30,
+    width: 500
+  }
+});
+
+const Intro = () => {
+  const classes = useStyles();
+  return __jsx("article", {
+    className: classes.introContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, __jsx("img", {
+    src: "../../static/pearl-intro.png",
+    alt: "profile picture",
+    className: classes.image,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }), __jsx("p", {
+    className: classes.introContent,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: undefined
+  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Intro);
 
 /***/ }),
 
