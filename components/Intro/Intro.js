@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Statement from '../Statement/Statement';
+import Customers from '../Customers/Customers';
 
 const useStyles = makeStyles({
   introContainer: {
@@ -45,6 +46,7 @@ const Intro = () => {
         </p>
       </article>
       <Statement />
+      <Customers />
     </>
   );
 };
