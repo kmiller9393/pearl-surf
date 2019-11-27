@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Statement from '../Statement/Statement';
 
 const useStyles = makeStyles({
   introContainer: {
@@ -26,22 +27,25 @@ const Intro = () => {
   const classes = useStyles();
 
   return (
-    <article className={classes.introContainer}>
-      <img
-        src="../../static/pearl-intro.png"
-        alt="profile picture"
-        className={classes.image}
-      />
-      <p className={classes.introContent}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </article>
+    <>
+      <article className={classes.introContainer}>
+        <img
+          src="../../static/pearl-intro.png"
+          alt="profile picture"
+          className={classes.image}
+        />
+        <p className={classes.introContent}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </article>
+      <Statement />
+    </>
   );
 };
 
