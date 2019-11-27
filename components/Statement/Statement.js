@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    marginTop: 70
+    margin: '70px 0'
   },
   contentContainer: {
     borderTop: '1px solid black',
