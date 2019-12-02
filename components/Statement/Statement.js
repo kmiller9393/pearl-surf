@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     margin: '70px 0'
   },
   contentContainer: {
-    borderTop: '1px solid black',
+    borderTop: '.5px solid #d3d3d3',
     width: 910
   },
   header: {
